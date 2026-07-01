@@ -3,6 +3,23 @@
 module ThemeColorOverride
   STYLE = <<~CSS.freeze
     <style id="site-theme-color-overrides">
+      html {
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+      }
+
+      @media (min-width: 576px) {
+        .publications ol.bibliography > li .abbr {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+
+        .publications ol.bibliography > li .abbr + [id] {
+          flex: 0 0 75%;
+          max-width: 75%;
+        }
+      }
+
       :root {
         --global-theme-color: #2563eb;
         --global-hover-color: #1d4ed8;
