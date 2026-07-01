@@ -19,7 +19,19 @@
   font-size: 16px;
 }
 
-      </style> </head> <body> <d-front-matter> <script async type="text/json">
+      </style> <style id="site-theme-color-overrides">
+  :root {
+    --global-theme-color: #2563eb;
+    --global-hover-color: #1d4ed8;
+    --global-footer-link-color: #2563eb;
+  }
+
+  html[data-theme="dark"] {
+    --global-theme-color: #60a5fa;
+    --global-hover-color: #93c5fd;
+    --global-footer-link-color: #60a5fa;
+  }
+</style> </head> <body> <d-front-matter> <script async type="text/json">
       {
             "title": "a distill-style blog post",
             "description": "an example of a distill-style blog post and main elements",
