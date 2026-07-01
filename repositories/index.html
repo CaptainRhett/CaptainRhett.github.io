@@ -2,7 +2,7 @@
   :root {
     --max-content-width: 930px;
   }
-</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://captainrhett.github.io/repositories/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?v=3493fae31e55f4ac584f554b257782a6"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://captainrhett.github.io/repositories/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> <style id="site-theme-color-overrides">
   html {
@@ -22,6 +22,91 @@
     }
   }
 
+  #markdown-content pre {
+    margin: 1rem 0 1.25rem;
+    padding: 1rem 1.125rem;
+    overflow-x: auto;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 6px;
+    background: #eff6ff;
+    color: #111827;
+    line-height: 1.65;
+    tab-size: 2;
+  }
+
+  #markdown-content pre code,
+  #markdown-content pre code span {
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: inherit;
+    font-size: 0.88rem;
+    line-height: inherit;
+    white-space: pre;
+  }
+
+  #markdown-content div.highlighter-rouge,
+  #markdown-content div.highlight {
+    border-radius: 6px;
+    background: #eff6ff;
+  }
+
+  #markdown-content p code,
+  #markdown-content li code,
+  #markdown-content td code {
+    padding: 0.12rem 0.32rem;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    border-radius: 4px;
+    background: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+    font-size: 0.9em;
+  }
+
+  html[data-theme="dark"] #markdown-content pre {
+    border-color: var(--global-theme-color);
+    background: #0f1d33;
+    color: #e5e7eb;
+  }
+
+  html[data-theme="dark"] #markdown-content div.highlighter-rouge,
+  html[data-theme="dark"] #markdown-content div.highlight {
+    background: #0f1d33;
+  }
+
+  html[data-theme="dark"] #markdown-content p code,
+  html[data-theme="dark"] #markdown-content li code,
+  html[data-theme="dark"] #markdown-content td code {
+    border-color: rgba(96, 165, 250, 0.28);
+    background: rgba(96, 165, 250, 0.12);
+    color: #60a5fa;
+  }
+
+  #markdown-content .code-display-wrapper .copy {
+    z-index: 3;
+    border: 1px solid var(--global-theme-color);
+    background: #ffffff;
+    color: var(--global-theme-color);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.35rem 0.45rem;
+  }
+
+  #markdown-content .code-display-wrapper .copy:focus-visible {
+    opacity: 1;
+    outline: 2px solid rgba(37, 99, 235, 0.32);
+    outline-offset: 2px;
+  }
+
+  html[data-theme="dark"] #markdown-content .code-display-wrapper .copy {
+    background: #111827;
+  }
+
+  @media (hover: none) {
+    #markdown-content .code-display-wrapper .copy {
+      opacity: 1;
+    }
+  }
+
   :root {
     --global-theme-color: #2563eb;
     --global-hover-color: #1d4ed8;
@@ -33,7 +118,84 @@
     --global-hover-color: #93c5fd;
     --global-footer-link-color: #60a5fa;
   }
-</style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Wuhuang Yao </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">repositories</h1> <p class="post-description">Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.</p> </header> <article> <h2 id="github-users">GitHub users</h2> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/torvalds" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="torvalds" src="https://github-readme-stats.vercel.app/api/?username=torvalds&amp;theme=panda&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="torvalds" src="https://github-readme-stats.vercel.app/api/?username=torvalds&amp;theme=dark&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/alshedivat" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="alshedivat" src="https://github-readme-stats.vercel.app/api/?username=alshedivat&amp;theme=panda&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="alshedivat" src="https://github-readme-stats.vercel.app/api/?username=alshedivat&amp;theme=dark&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> </a> </div> </div> <hr> <h4>torvalds</h4> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/ryo-ma/github-profile-trophy" rel="external nofollow noopener" target="_blank"> <span class="d-none d-sm-none d-md-block"> <img class="only-light" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-none d-sm-block d-md-none"> <img class="only-light" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-block d-sm-none"> <img class="only-light" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> </span> </a> </div> </div> <hr> <h4>alshedivat</h4> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/ryo-ma/github-profile-trophy" rel="external nofollow noopener" target="_blank"> <span class="d-none d-sm-none d-md-block"> <img class="only-light" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-none d-sm-block d-md-none"> <img class="only-light" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-block d-sm-none"> <img class="only-light" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> </span> </a> </div> </div> <hr> <h2 id="github-repositories">GitHub Repositories</h2> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="alshedivat/al-folio" src="https://github-readme-stats.vercel.app/api/pin/?username=alshedivat&amp;repo=al-folio&amp;theme=panda&amp;locale=en&amp;show_owner=false&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="alshedivat/al-folio" src="https://github-readme-stats.vercel.app/api/pin/?username=alshedivat&amp;repo=al-folio&amp;theme=dark&amp;locale=en&amp;show_owner=false&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/jekyll/jekyll" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="jekyll/jekyll" src="https://github-readme-stats.vercel.app/api/pin/?username=jekyll&amp;repo=jekyll&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="jekyll/jekyll" src="https://github-readme-stats.vercel.app/api/pin/?username=jekyll&amp;repo=jekyll&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/twbs/bootstrap" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="twbs/bootstrap" src="https://github-readme-stats.vercel.app/api/pin/?username=twbs&amp;repo=bootstrap&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="twbs/bootstrap" src="https://github-readme-stats.vercel.app/api/pin/?username=twbs&amp;repo=bootstrap&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/jquery/jquery" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="jquery/jquery" src="https://github-readme-stats.vercel.app/api/pin/?username=jquery&amp;repo=jquery&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="jquery/jquery" src="https://github-readme-stats.vercel.app/api/pin/?username=jquery&amp;repo=jquery&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/FortAwesome/Font-Awesome" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="FortAwesome/Font-Awesome" src="https://github-readme-stats.vercel.app/api/pin/?username=FortAwesome&amp;repo=Font-Awesome&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="FortAwesome/Font-Awesome" src="https://github-readme-stats.vercel.app/api/pin/?username=FortAwesome&amp;repo=Font-Awesome&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/mathjax/MathJax" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="mathjax/MathJax" src="https://github-readme-stats.vercel.app/api/pin/?username=mathjax&amp;repo=MathJax&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="mathjax/MathJax" src="https://github-readme-stats.vercel.app/api/pin/?username=mathjax&amp;repo=MathJax&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/jpswalsh/academicons" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="jpswalsh/academicons" src="https://github-readme-stats.vercel.app/api/pin/?username=jpswalsh&amp;repo=academicons&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="jpswalsh/academicons" src="https://github-readme-stats.vercel.app/api/pin/?username=jpswalsh&amp;repo=academicons&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Wuhuang Yao. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+</style> <script id="site-code-copy-fallback">
+  (function () {
+    function legacyWriteText(text) {
+      return new Promise(function (resolve, reject) {
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "-9999px";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+
+        try {
+          var copied = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          copied ? resolve() : reject(new Error("copy command failed"));
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function writeText(text) {
+      if (window.navigator.clipboard && typeof window.navigator.clipboard.writeText === "function" && window.isSecureContext) {
+        return window.navigator.clipboard.writeText(text).catch(function () {
+          return legacyWriteText(text);
+        });
+      }
+
+      return legacyWriteText(text);
+    }
+
+    function codeTextFrom(pre) {
+      var nestedPre = pre.querySelector("pre:not(.lineno)");
+      var code = nestedPre || pre.querySelector("code") || pre;
+      return code.innerText.trim();
+    }
+
+    function setCopyState(button, ok) {
+      button.innerHTML = ok ? "<i class="fa-solid fa-clipboard-check"></i>" : "<i class="fa-solid fa-triangle-exclamation"></i>";
+      button.setAttribute("aria-label", ok ? "Copied code to clipboard" : "Copy failed");
+
+      window.setTimeout(function () {
+        button.innerHTML = "<i class="fa-solid fa-clipboard"></i>";
+        button.setAttribute("aria-label", "Copy code to clipboard");
+      }, 3000);
+    }
+
+    document.addEventListener(
+      "click",
+      function (event) {
+        var button = event.target.closest && event.target.closest(".code-display-wrapper .copy");
+        if (!button) return;
+
+        var wrapper = button.closest(".code-display-wrapper");
+        var pre = wrapper && wrapper.querySelector("pre");
+        if (!pre) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        writeText(codeTextFrom(pre)).then(
+          function () {
+            setCopyState(button, true);
+          },
+          function () {
+            setCopyState(button, false);
+          }
+        );
+      },
+      true
+    );
+  })();
+</script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Wuhuang Yao </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">repositories</h1> <p class="post-description">Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.</p> </header> <article> <h2 id="github-users">GitHub users</h2> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/torvalds" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="torvalds" src="https://github-readme-stats.vercel.app/api/?username=torvalds&amp;theme=panda&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="torvalds" src="https://github-readme-stats.vercel.app/api/?username=torvalds&amp;theme=dark&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/alshedivat" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="alshedivat" src="https://github-readme-stats.vercel.app/api/?username=alshedivat&amp;theme=panda&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="alshedivat" src="https://github-readme-stats.vercel.app/api/?username=alshedivat&amp;theme=dark&amp;locale=en&amp;show_icons=true" onerror="this.closest('.repo').style.display='none'"> </a> </div> </div> <hr> <h4>torvalds</h4> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/ryo-ma/github-profile-trophy" rel="external nofollow noopener" target="_blank"> <span class="d-none d-sm-none d-md-block"> <img class="only-light" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-none d-sm-block d-md-none"> <img class="only-light" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-block d-sm-none"> <img class="only-light" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="torvalds" src="https://github-profile-trophy.vercel.app/?username=torvalds&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> </span> </a> </div> </div> <hr> <h4>alshedivat</h4> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/ryo-ma/github-profile-trophy" rel="external nofollow noopener" target="_blank"> <span class="d-none d-sm-none d-md-block"> <img class="only-light" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=6" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-none d-sm-block d-md-none"> <img class="only-light" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=4" onerror="this.closest('.repo').style.display='none'"> </span> <span class="d-block d-sm-none"> <img class="only-light" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=flat&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark" alt="alshedivat" src="https://github-profile-trophy.vercel.app/?username=alshedivat&amp;theme=gitdimmed&amp;locale=en&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;rank=-C&amp;column=3" onerror="this.closest('.repo').style.display='none'"> </span> </a> </div> </div> <hr> <h2 id="github-repositories">GitHub Repositories</h2> <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> <div class="repo p-2 text-center"> <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="alshedivat/al-folio" src="https://github-readme-stats.vercel.app/api/pin/?username=alshedivat&amp;repo=al-folio&amp;theme=panda&amp;locale=en&amp;show_owner=false&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="alshedivat/al-folio" src="https://github-readme-stats.vercel.app/api/pin/?username=alshedivat&amp;repo=al-folio&amp;theme=dark&amp;locale=en&amp;show_owner=false&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/jekyll/jekyll" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="jekyll/jekyll" src="https://github-readme-stats.vercel.app/api/pin/?username=jekyll&amp;repo=jekyll&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="jekyll/jekyll" src="https://github-readme-stats.vercel.app/api/pin/?username=jekyll&amp;repo=jekyll&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/twbs/bootstrap" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="twbs/bootstrap" src="https://github-readme-stats.vercel.app/api/pin/?username=twbs&amp;repo=bootstrap&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="twbs/bootstrap" src="https://github-readme-stats.vercel.app/api/pin/?username=twbs&amp;repo=bootstrap&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/jquery/jquery" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="jquery/jquery" src="https://github-readme-stats.vercel.app/api/pin/?username=jquery&amp;repo=jquery&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="jquery/jquery" src="https://github-readme-stats.vercel.app/api/pin/?username=jquery&amp;repo=jquery&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/FortAwesome/Font-Awesome" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="FortAwesome/Font-Awesome" src="https://github-readme-stats.vercel.app/api/pin/?username=FortAwesome&amp;repo=Font-Awesome&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="FortAwesome/Font-Awesome" src="https://github-readme-stats.vercel.app/api/pin/?username=FortAwesome&amp;repo=Font-Awesome&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/mathjax/MathJax" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="mathjax/MathJax" src="https://github-readme-stats.vercel.app/api/pin/?username=mathjax&amp;repo=MathJax&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="mathjax/MathJax" src="https://github-readme-stats.vercel.app/api/pin/?username=mathjax&amp;repo=MathJax&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> <div class="repo p-2 text-center"> <a href="https://github.com/jpswalsh/academicons" rel="external nofollow noopener" target="_blank"> <img class="only-light w-100" alt="jpswalsh/academicons" src="https://github-readme-stats.vercel.app/api/pin/?username=jpswalsh&amp;repo=academicons&amp;theme=panda&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> <img class="only-dark w-100" alt="jpswalsh/academicons" src="https://github-readme-stats.vercel.app/api/pin/?username=jpswalsh&amp;repo=academicons&amp;theme=dark&amp;locale=en&amp;show_owner=true&amp;description_lines_count=2" onerror="this.closest('.repo').style.display='none'"> </a> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Wuhuang Yao. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -53,7 +215,7 @@ ninja.data = [{
     },
   },{id: "nav-blog",
           title: "blog",
-          description: "",
+          description: "posts and updates in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
@@ -79,345 +241,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-a-post-with-plotly-js",
+        },{id: "post-lsb-图像隐写程序设计",
         
-          title: "a post with plotly.js",
+          title: "LSB 图像隐写程序设计",
         
-        description: "this is what included plotly.js code could look like",
+        description: "北京理工大学课程作业：使用 Python 和 Pillow 实现 LSB 图像隐写的加密与解密。",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/plotly/";
-          
-        },
-      },{id: "post-a-post-with-image-galleries",
-        
-          title: "a post with image galleries",
-        
-        description: "this is what included image galleries could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/photo-gallery/";
-          
-        },
-      },{id: "post-a-post-with-tabs",
-        
-          title: "a post with tabs",
-        
-        description: "this is what included tabs in a post could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/tabs/";
-          
-        },
-      },{id: "post-a-post-with-typograms",
-        
-          title: "a post with typograms",
-        
-        description: "this is what included typograms code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/typograms/";
-          
-        },
-      },{id: "post-a-post-that-can-be-cited",
-        
-          title: "a post that can be cited",
-        
-        description: "this is what a post that can be cited looks like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/post-citation/";
-          
-        },
-      },{id: "post-a-post-with-pseudo-code",
-        
-          title: "a post with pseudo code",
-        
-        description: "this is what included pseudo code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/pseudocode/";
-          
-        },
-      },{id: "post-a-post-with-code-diff",
-        
-          title: "a post with code diff",
-        
-        description: "this is how you can display code diffs",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/code-diff/";
-          
-        },
-      },{id: "post-a-post-with-advanced-image-components",
-        
-          title: "a post with advanced image components",
-        
-        description: "this is what advanced image components could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/advanced-images/";
-          
-        },
-      },{id: "post-a-post-with-vega-lite",
-        
-          title: "a post with vega lite",
-        
-        description: "this is what included vega lite code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/vega-lite/";
-          
-        },
-      },{id: "post-a-post-with-geojson",
-        
-          title: "a post with geojson",
-        
-        description: "this is what included geojson code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/geojson-map/";
-          
-        },
-      },{id: "post-a-post-with-echarts",
-        
-          title: "a post with echarts",
-        
-        description: "this is what included echarts code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/echarts/";
-          
-        },
-      },{id: "post-a-post-with-chart-js",
-        
-          title: "a post with chart.js",
-        
-        description: "this is what included chart.js code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/chartjs/";
-          
-        },
-      },{id: "post-a-post-with-tikzjax",
-        
-          title: "a post with TikZJax",
-        
-        description: "this is what included TikZ code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/tikzjax/";
-          
-        },
-      },{id: "post-a-post-with-bibliography",
-        
-          title: "a post with bibliography",
-        
-        description: "an example of a blog post with bibliography",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/post-bibliography/";
-          
-        },
-      },{id: "post-a-post-with-jupyter-notebook",
-        
-          title: "a post with jupyter notebook",
-        
-        description: "an example of a blog post with jupyter notebook",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/jupyter-notebook/";
-          
-        },
-      },{id: "post-a-post-with-custom-blockquotes",
-        
-          title: "a post with custom blockquotes",
-        
-        description: "an example of a blog post with custom blockquotes",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/custom-blockquotes/";
-          
-        },
-      },{id: "post-a-post-with-table-of-contents-on-a-sidebar",
-        
-          title: "a post with table of contents on a sidebar",
-        
-        description: "an example of a blog post with table of contents on a sidebar",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/sidebar-table-of-contents/";
-          
-        },
-      },{id: "post-a-post-with-audios",
-        
-          title: "a post with audios",
-        
-        description: "this is what included audios could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/audios/";
-          
-        },
-      },{id: "post-a-post-with-videos",
-        
-          title: "a post with videos",
-        
-        description: "this is what included videos could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/videos/";
-          
-        },
-      },{id: "post-displaying-beautiful-interactive-tables",
-        
-          title: "displaying beautiful interactive tables",
-        
-        description: "an example of how to use interactive tables in al-folio",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/tables/";
-          
-        },
-      },{id: "post-a-post-with-table-of-contents",
-        
-          title: "a post with table of contents",
-        
-        description: "an example of a blog post with table of contents",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/table-of-contents/";
-          
-        },
-      },{id: "post-a-post-with-giscus-comments",
-        
-          title: "a post with giscus comments",
-        
-        description: "an example of a blog post with giscus comments",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2022/giscus-comments/";
-          
-        },
-      },{id: "post-a-post-with-redirect",
-        
-          title: "a post with redirect",
-        
-        description: "you can also redirect to assets like pdf",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/assets/pdf/example_pdf.pdf";
-          
-        },
-      },{id: "post-a-post-with-diagrams",
-        
-          title: "a post with diagrams",
-        
-        description: "an example of a blog post with diagrams",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/diagrams/";
-          
-        },
-      },{id: "post-a-distill-style-blog-post",
-        
-          title: "a distill-style blog post",
-        
-        description: "an example of a distill-style blog post and main elements",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/distill/";
-          
-        },
-      },{id: "post-a-post-with-twitter",
-        
-          title: "a post with twitter",
-        
-        description: "an example of a blog post with twitter",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2020/twitter/";
-          
-        },
-      },{id: "post-a-post-with-disqus-comments",
-        
-          title: "a post with disqus comments",
-        
-        description: "an example of a blog post with disqus comments",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/disqus-comments/";
-          
-        },
-      },{id: "post-a-post-with-math",
-        
-          title: "a post with math",
-        
-        description: "an example of a blog post with some math",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/math/";
-          
-        },
-      },{id: "post-a-post-with-code",
-        
-          title: "a post with code",
-        
-        description: "an example of a blog post with some code",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/code/";
-          
-        },
-      },{id: "post-a-post-with-images",
-        
-          title: "a post with images",
-        
-        description: "this is what included images could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/images/";
-          
-        },
-      },{id: "post-a-post-with-formatting-and-links",
-        
-          title: "a post with formatting and links",
-        
-        description: "march & april, looking forward to summer",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/formatting-and-links/";
+            window.location.href = "/blog/2022/lsb-steganography/";
           
         },
       },{id: "books-the-godfather",

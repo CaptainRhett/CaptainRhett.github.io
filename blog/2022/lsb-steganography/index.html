@@ -1,0 +1,437 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> LSB 图像隐写程序设计 | Wuhuang Yao </title> <meta name="author" content="Wuhuang Yao"> <meta name="description" content="北京理工大学课程作业：使用 Python 和 Pillow 实现 LSB 图像隐写的加密与解密。"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?v=3493fae31e55f4ac584f554b257782a6"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://captainrhett.github.io/blog/2022/lsb-steganography/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <style id="site-theme-color-overrides">
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+  }
+
+  @media (min-width: 576px) {
+    .publications ol.bibliography > li .abbr {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+
+    .publications ol.bibliography > li .abbr + [id] {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+  }
+
+  #markdown-content pre {
+    margin: 1rem 0 1.25rem;
+    padding: 1rem 1.125rem;
+    overflow-x: auto;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 6px;
+    background: #eff6ff;
+    color: #111827;
+    line-height: 1.65;
+    tab-size: 2;
+  }
+
+  #markdown-content pre code,
+  #markdown-content pre code span {
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: inherit;
+    font-size: 0.88rem;
+    line-height: inherit;
+    white-space: pre;
+  }
+
+  #markdown-content div.highlighter-rouge,
+  #markdown-content div.highlight {
+    border-radius: 6px;
+    background: #eff6ff;
+  }
+
+  #markdown-content p code,
+  #markdown-content li code,
+  #markdown-content td code {
+    padding: 0.12rem 0.32rem;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    border-radius: 4px;
+    background: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+    font-size: 0.9em;
+  }
+
+  html[data-theme="dark"] #markdown-content pre {
+    border-color: var(--global-theme-color);
+    background: #0f1d33;
+    color: #e5e7eb;
+  }
+
+  html[data-theme="dark"] #markdown-content div.highlighter-rouge,
+  html[data-theme="dark"] #markdown-content div.highlight {
+    background: #0f1d33;
+  }
+
+  html[data-theme="dark"] #markdown-content p code,
+  html[data-theme="dark"] #markdown-content li code,
+  html[data-theme="dark"] #markdown-content td code {
+    border-color: rgba(96, 165, 250, 0.28);
+    background: rgba(96, 165, 250, 0.12);
+    color: #60a5fa;
+  }
+
+  #markdown-content .code-display-wrapper .copy {
+    z-index: 3;
+    border: 1px solid var(--global-theme-color);
+    background: #ffffff;
+    color: var(--global-theme-color);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.35rem 0.45rem;
+  }
+
+  #markdown-content .code-display-wrapper .copy:focus-visible {
+    opacity: 1;
+    outline: 2px solid rgba(37, 99, 235, 0.32);
+    outline-offset: 2px;
+  }
+
+  html[data-theme="dark"] #markdown-content .code-display-wrapper .copy {
+    background: #111827;
+  }
+
+  @media (hover: none) {
+    #markdown-content .code-display-wrapper .copy {
+      opacity: 1;
+    }
+  }
+
+  :root {
+    --global-theme-color: #2563eb;
+    --global-hover-color: #1d4ed8;
+    --global-footer-link-color: #2563eb;
+  }
+
+  html[data-theme="dark"] {
+    --global-theme-color: #60a5fa;
+    --global-hover-color: #93c5fd;
+    --global-footer-link-color: #60a5fa;
+  }
+</style> <script id="site-code-copy-fallback">
+  (function () {
+    function legacyWriteText(text) {
+      return new Promise(function (resolve, reject) {
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "-9999px";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+
+        try {
+          var copied = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          copied ? resolve() : reject(new Error("copy command failed"));
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function writeText(text) {
+      if (window.navigator.clipboard && typeof window.navigator.clipboard.writeText === "function" && window.isSecureContext) {
+        return window.navigator.clipboard.writeText(text).catch(function () {
+          return legacyWriteText(text);
+        });
+      }
+
+      return legacyWriteText(text);
+    }
+
+    function codeTextFrom(pre) {
+      var nestedPre = pre.querySelector("pre:not(.lineno)");
+      var code = nestedPre || pre.querySelector("code") || pre;
+      return code.innerText.trim();
+    }
+
+    function setCopyState(button, ok) {
+      button.innerHTML = ok ? "<i class="fa-solid fa-clipboard-check"></i>" : "<i class="fa-solid fa-triangle-exclamation"></i>";
+      button.setAttribute("aria-label", ok ? "Copied code to clipboard" : "Copy failed");
+
+      window.setTimeout(function () {
+        button.innerHTML = "<i class="fa-solid fa-clipboard"></i>";
+        button.setAttribute("aria-label", "Copy code to clipboard");
+      }, 3000);
+    }
+
+    document.addEventListener(
+      "click",
+      function (event) {
+        var button = event.target.closest && event.target.closest(".code-display-wrapper .copy");
+        if (!button) return;
+
+        var wrapper = button.closest(".code-display-wrapper");
+        var pre = wrapper && wrapper.querySelector("pre");
+        if (!pre) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        writeText(codeTextFrom(pre)).then(
+          function () {
+            setCopyState(button, true);
+          },
+          function () {
+            setCopyState(button, false);
+          }
+        );
+      },
+      true
+    );
+  })();
+</script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Wuhuang Yao </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">LSB 图像隐写程序设计</h1> <p class="post-meta"> Created on September 09, 2022 </p> <p class="post-tags"> <a href="/blog/2022"> <i class="fa-solid fa-calendar fa-sm"></i> 2022 </a>   ·   <a href="/blog/tag/python"> <i class="fa-solid fa-hashtag fa-sm"></i> python</a>   <a href="/blog/tag/image-processing"> <i class="fa-solid fa-hashtag fa-sm"></i> image-processing</a>   <a href="/blog/tag/steganography"> <i class="fa-solid fa-hashtag fa-sm"></i> steganography</a>   ·   <a href="/blog/category/assignments"> <i class="fa-solid fa-tag fa-sm"></i> assignments</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p>此为北京理工大学网安专业某学期的某次作业。</p> <h1 id="一项目背景">一、项目背景</h1> <h2 id="1-隐写术">1. 隐写术</h2> <p>隐写术是一门关于信息隐藏的技巧与科学。所谓信息隐藏，指的是不让除预期接收者之外的任何人知晓信息的传递事件或者信息的内容。</p> <h2 id="2-lsb-隐写术">2. LSB 隐写术</h2> <p>LSB 隐写术是一种图像隐写术技术，其中通过将每个像素的<strong>最低有效位</strong>替换为要隐藏的消息位来将消息隐藏在图像中。</p> <h2 id="3-实现原理">3. 实现原理</h2> <p>为了更好地理解，让我们将数字图像视为像素的二维阵列。每个像素包含取决于其类型和深度的值。使用最广泛的颜色模式 RGB 时，这些值的范围为 0-255。</p> <p><img src="https://img2022.cnblogs.com/blog/2966064/202209/2966064-20220909082237848-432441629.png" alt="RGB 像素示意图"></p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/lsb-480.webp 480w,/assets/img/lsb-800.webp 800w,/assets/img/lsb-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/lsb.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <p>可以使用 ASCII Table 将消息转换为十进制值，然后再转换为二进制。随后逐个迭代像素值，将它们转换为二进制，并将每个最低有效位替换为消息序列中的对应位。</p> <p>要解码编码图像，只需反转该过程：收集并存储每个像素的最后一位，然后将它们分成 8 位一组，并转换回 ASCII 字符，从而获取隐藏消息。</p> <h1 id="二项目目标">二、项目目标</h1> <h2 id="1-主要目标">1. 主要目标</h2> <p>编写 <strong>LSB 图像隐写程序</strong>，包括：<strong>加密程序</strong>和<strong>解密程序</strong>。</p> <h2 id="2-目标分解">2. 目标分解</h2> <ul> <li>实现文本信息加密到图像</li> <li>实现图像文件解密到文本</li> </ul> <h1 id="三技术选型">三、技术选型</h1> <h2 id="1-如何以二进制方式读写图像文件">1. 如何以二进制方式读写图像文件？</h2> <p>首先安装 Pillow 库。打开控制台后输入以下命令即可自动安装：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="n">pillow</span>
+</code></pre></div></div> <p>然后读取图片：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 从 pillow 库（即 PIL）中导入 Image 类
+</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">../xx.jpg</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># 读取图片存入变量 img 中
+</span><span class="nf">print</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span>  <span class="c1"># 输出图片格式 str
+</span><span class="nf">print</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># 输出图片大小信息 tuple = (int, int)
+</span></code></pre></div></div> <p>获取像素信息：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 像素载入
+</span><span class="n">pix</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># .size 方法返回的是一个元组 tuple = (int, int)
+</span><span class="n">height</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># 获取像素点的 RGB 值
+</span><span class="n">rgb_list</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 创建一个数组存储 RGB 值
+</span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>  <span class="c1"># 遍历每一个像素点，将图像看作二维数组
+</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>  <span class="c1"># 如果 x 循环在外层，输出的图像会发生九十度翻转
+</span>        <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">pix</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+        <span class="n">rgb_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">rgb_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+        <span class="n">rgb_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div></div> <p>输出图像：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 输出图像
+</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">pixels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 以 [(r1, g1, b1), (r2, g2, b2)] 形式存放每个像素点的 RGB 值，用于绘制图像
+</span><span class="n">img_out</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># 生成新图像，以原图的格式和大小
+</span>
+<span class="c1"># img_out 此时还是一张白纸，下面的代码用于更新 img_out 的像素信息
+</span><span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">rgb_list</span><span class="p">):</span>
+    <span class="n">pixels</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="n">rgb_list</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">rgb_list</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">rgb_list</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]))</span>
+    <span class="n">j</span> <span class="o">+=</span> <span class="mi">3</span>
+
+<span class="n">img_out</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>  <span class="c1"># 放置像素信息
+</span><span class="n">img_out</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">"</span><span class="s">img_out2.png</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># 将图像保存到根目录
+</span></code></pre></div></div> <h2 id="2-信息如何转换">2. 信息如何转换？</h2> <p>二进制转文本（解密）：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bina_to_txt</span><span class="p">(</span><span class="n">bina</span><span class="p">):</span>
+    <span class="c1"># 只要传入一个由二进制数组成的序列即可翻译成文本
+</span>    <span class="n">tex</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bina</span><span class="p">:</span>
+        <span class="n">tex</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">chr</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">tex</span>  <span class="c1"># 返回一个单字符序列
+</span>
+
+<span class="c1"># 要求 bina 的格式为 ["01010101", "11111111"]
+</span></code></pre></div></div> <p>文本转二进制（加密）：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">txt_to_bina</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">txt</span><span class="p">:</span>
+        <span class="n">c</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">"</span><span class="s">{:0&gt;8}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nf">bin</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)).</span><span class="nf">lstrip</span><span class="p">(</span><span class="sh">"</span><span class="s">0b</span><span class="sh">"</span><span class="p">)))</span>
+        <span class="c1"># 格式化并将二进制码保存起来
+</span>        <span class="c1"># 注意要在左侧补齐八位，否则信息会错位
+</span>
+    <span class="n">resultlist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+            <span class="n">resultlist</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">resultlist</span>
+
+
+<span class="c1"># txt 为字符串类型，如 "hello world!"
+# print(txt_to_bina("h")) 输出测试
+# test_output: ["0", "1", "1", "0", "1", "0", "0", "0"]
+</span></code></pre></div></div> <p>替换信息位（加密）：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 替换信息位
+</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="nf">txt_to_bina</span><span class="p">(</span><span class="n">txt</span><span class="p">)):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">bin</span><span class="p">(</span><span class="n">rgb_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>  <span class="c1"># 用 bin() 强制转换，bin() 返回字符串类型
+</span>    <span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">txt_to_bina</span><span class="p">(</span><span class="n">txt</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># 将 RGB 信息二进制码的最后一位替换成文本二进制码
+</span>    <span class="n">rgb_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">temp</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># txt_to_bina() 是自定义函数，旨在将文本转化成二进制码，返回一个单字符序列
+# 这里直接用第一个像素的 RGB 值作为隐写的开头，所以 rgb_list 和 txt_to_bina() 的 index 是一样的
+# 此处可以继续做加密处理
+</span>
+<span class="c1"># 特别注意：在 Python 中字符串不能直接修改，replace 方法不会改变原来的 string
+# 修改字符串要将字符串转换成序列，修改序列后再将序列转成字符串，实现代码如下：
+</span><span class="n">s</span> <span class="o">=</span> <span class="sh">"</span><span class="s">abcde</span><span class="sh">"</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">f</span><span class="sh">"</span>  <span class="c1"># 假设要将 s 的最后一位 "e" 修改为 "f"
+</span><span class="n">s</span> <span class="o">=</span> <span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</code></pre></div></div> <p>提取信息位信息：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 这里直接用的是 "hello world!" 的长度，后期优化可以加个旗帜识别
+</span><span class="n">c</span> <span class="o">=</span> <span class="sh">""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">96</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">+=</span> <span class="nf">bin</span><span class="p">(</span><span class="n">rgb_list</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 图像处理后得到 rgb_list，取二进制码的最后一位
+</span>
+<span class="n">out_list_bin</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">out_list_bin</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">8</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">])</span>  <span class="c1"># 每八位为一组转换出文本
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nf">bina_to_txt</span><span class="p">(</span><span class="n">out_list_bin</span><span class="p">)))</span>
+</code></pre></div></div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Wuhuang Yao. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "posts and updates in reversed chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "publications by categories in reversed chronological order. generated by jekyll-scholar.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of your cool projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-lsb-图像隐写程序设计",
+        
+          title: "LSB 图像隐写程序设计",
+        
+        description: "北京理工大学课程作业：使用 Python 和 Pillow 实现 LSB 图像隐写的加密与解密。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/lsb-steganography/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "projects-project-1",
+          title: 'project 1',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-project-2",
+          title: 'project 2',
+          description: "a project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-project-3-with-very-long-name",
+          title: 'project 3 with very long name',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%63%61%70%74%61%69%6E%72%68%65%74%74%79%61%6F@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/CaptainRhett", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=jUbr6ggAAAAJ", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
