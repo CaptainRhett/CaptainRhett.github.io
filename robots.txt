@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://CaptainRhett.github.io/al-folio/sitemap.xml
+Sitemap: https://CaptainRhett.github.io/sitemap.xml
