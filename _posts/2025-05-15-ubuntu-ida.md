@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu安装ida（使用conda环境）
-date: 2022-09-09 09:13:23 
+date: 2025-05-15 15:21:54 
 description: ubuntu安装ida
 tags: ida
 ---
