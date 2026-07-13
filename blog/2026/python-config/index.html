@@ -1,4 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://captainrhett.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://captainrhett.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-07-13T08:31:05+00:00</updated><id>https://captainrhett.github.io/feed.xml</id><title type="html">Wuhuang Yao</title><subtitle>Personal website of Wuhuang Yao. </subtitle><entry><title type="html">安全实习生-抖音研发 一面凉经</title><link href="https://captainrhett.github.io/blog/2026/%E5%AD%97%E8%8A%82%E5%AE%89%E5%85%A8%E5%AE%9E%E4%B9%A0%E7%94%9F-%E6%8A%96%E9%9F%B3%E7%A0%94%E5%8F%91/" rel="alternate" type="text/html" title="安全实习生-抖音研发 一面凉经"/><published>2026-07-07T22:38:17+00:00</published><updated>2026-07-07T22:38:17+00:00</updated><id>https://captainrhett.github.io/blog/2026/%E5%AD%97%E8%8A%82%E5%AE%89%E5%85%A8%E5%AE%9E%E4%B9%A0%E7%94%9F-%E6%8A%96%E9%9F%B3%E7%A0%94%E5%8F%91</id><content type="html" xml:base="https://captainrhett.github.io/blog/2026/%E5%AD%97%E8%8A%82%E5%AE%89%E5%85%A8%E5%AE%9E%E4%B9%A0%E7%94%9F-%E6%8A%96%E9%9F%B3%E7%A0%94%E5%8F%91/"><![CDATA[<h1 id="面试问题会议版">面试问题（会议版）</h1> <p>自我介绍</p> <p>问项目：</p> <ul> <li> <p>图是自己画的吗？</p> </li> <li>rag项目： <ul> <li>向量化是用的什么方法（word2vec），有没有了解过别的什么方法，选这个方法的考量是为什么</li> <li>检索是用的什么方法（余弦相似度），有没有了解过别的什么方法，选这个方法的考量是为什么</li> <li>数据是如何存储的？</li> <li>你在这里面做的工作是什么？</li> </ul> </li> <li>二进制漏洞挖掘项目： <ul> <li>你是如何hook malloc函数的？为什么</li> <li>指令翻译插装是干什么的？</li> <li>如何判定堆内存是否泄露的？</li> </ul> </li> </ul> <p>安全八股：</p> <ul> <li>web常见的漏洞有哪些</li> <li>sql注入的原理</li> <li>如何防止sql注入</li> </ul> <h1 id="jd">JD</h1> <p>日常实习:面向全体在校生，为符合岗位要求的同学提供为期3个月及以上的项目实践机会。团队介绍:抖音研发部门负责多款大型产品的研发，包括但不限于抖音、西瓜视频、汽水音乐。加入我们，你将有机会参与亿级用户场景的开发与架构工作，使用前沿的技术助力业务一起不断成长。 1、负责对抖音等产品和研发内部流程进行安全测试; 2、基于蓝军视角挖掘业务脆弱点，以攻促防提升业务安全水位; 3、参与内部安全蓝军体系建设，跟进行业前沿攻防技术。</p> <p>职位要求</p> <p>1、2027届及以后本科及以上学历在读，网络安全、计算机等相关专业优先; 2、熟悉至少一门编程语言，包括但不仅限于:Go、Python、Java、C++等; 3、熟悉Android、iOS、Web等任一平台常见安全漏洞、合规问题，了解对应的检测技术以及解决方案;4、对安全技术有浓厚的兴趣，良好的逻辑思维、团队协作能力; 5、每周出勤至少4天，可实习3个月及以上; 6[加分项]CTF赛事经历、代表性漏洞/工具、国内外学术界/工业界安全研究成果。</p>]]></content><author><name></name></author><category term="interview"/><summary type="html"><![CDATA[字节]]></summary></entry><entry><title type="html">python配置config的若干种方法</title><link href="https://captainrhett.github.io/blog/2026/python-config/" rel="alternate" type="text/html" title="python配置config的若干种方法"/><published>2026-03-16T12:08:24+00:00</published><updated>2026-03-16T12:08:24+00:00</updated><id>https://captainrhett.github.io/blog/2026/python-config</id><content type="html" xml:base="https://captainrhett.github.io/blog/2026/python-config/"><![CDATA[<p>Python 项目中的配置管理，常见方式包括：<strong>模块常量、字典、数据类、环境变量、配置文件、命令行参数，以及多层配置合并</strong>。不同方法适合不同规模和部署场景。</p> <h1 id="1-使用-python-模块保存配置">1. 使用 Python 模块保存配置</h1> <p>直接创建一个 <code class="language-plaintext highlighter-rouge">config.py</code>：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config.py
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> python配置config的若干种方法 | Wuhuang Yao </title> <meta name="author" content="Wuhuang Yao"> <meta name="description" content="科学管理项目，助力高效科研"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?v=3493fae31e55f4ac584f554b257782a6"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://captainrhett.github.io/blog/2026/python-config/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <style id="site-theme-color-overrides">
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+  }
+
+  @media (min-width: 576px) {
+    .publications ol.bibliography > li .abbr {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+
+    .publications ol.bibliography > li .abbr + [id] {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+  }
+
+  #markdown-content pre {
+    margin: 1rem 0 1.25rem;
+    padding: 1rem 1.125rem;
+    overflow-x: auto;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 6px;
+    background: #eff6ff;
+    color: #111827;
+    line-height: 1.65;
+    tab-size: 2;
+  }
+
+  #markdown-content pre code,
+  #markdown-content pre code span {
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: inherit;
+    font-size: 0.88rem;
+    line-height: inherit;
+    white-space: pre;
+  }
+
+  #markdown-content div.highlighter-rouge,
+  #markdown-content div.highlight {
+    border-radius: 6px;
+    background: #eff6ff;
+  }
+
+  #markdown-content p code,
+  #markdown-content li code,
+  #markdown-content td code {
+    padding: 0.12rem 0.32rem;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    border-radius: 4px;
+    background: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+    font-size: 0.9em;
+  }
+
+  html[data-theme="dark"] #markdown-content pre {
+    border-color: var(--global-theme-color);
+    background: #0f1d33;
+    color: #e5e7eb;
+  }
+
+  html[data-theme="dark"] #markdown-content div.highlighter-rouge,
+  html[data-theme="dark"] #markdown-content div.highlight {
+    background: #0f1d33;
+  }
+
+  html[data-theme="dark"] #markdown-content p code,
+  html[data-theme="dark"] #markdown-content li code,
+  html[data-theme="dark"] #markdown-content td code {
+    border-color: rgba(96, 165, 250, 0.28);
+    background: rgba(96, 165, 250, 0.12);
+    color: #60a5fa;
+  }
+
+  #markdown-content .code-display-wrapper .copy {
+    z-index: 3;
+    border: 1px solid var(--global-theme-color);
+    background: #ffffff;
+    color: var(--global-theme-color);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.35rem 0.45rem;
+  }
+
+  #markdown-content .code-display-wrapper .copy:focus-visible {
+    opacity: 1;
+    outline: 2px solid rgba(37, 99, 235, 0.32);
+    outline-offset: 2px;
+  }
+
+  html[data-theme="dark"] #markdown-content .code-display-wrapper .copy {
+    background: #111827;
+  }
+
+  @media (hover: none) {
+    #markdown-content .code-display-wrapper .copy {
+      opacity: 1;
+    }
+  }
+
+  :root {
+    --global-theme-color: #2563eb;
+    --global-hover-color: #1d4ed8;
+    --global-footer-link-color: #2563eb;
+  }
+
+  html[data-theme="dark"] {
+    --global-theme-color: #60a5fa;
+    --global-hover-color: #93c5fd;
+    --global-footer-link-color: #60a5fa;
+  }
+</style> <script id="site-code-copy-fallback">
+  (function () {
+    function legacyWriteText(text) {
+      return new Promise(function (resolve, reject) {
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "-9999px";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+
+        try {
+          var copied = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          copied ? resolve() : reject(new Error("copy command failed"));
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function writeText(text) {
+      if (window.navigator.clipboard && typeof window.navigator.clipboard.writeText === "function" && window.isSecureContext) {
+        return window.navigator.clipboard.writeText(text).catch(function () {
+          return legacyWriteText(text);
+        });
+      }
+
+      return legacyWriteText(text);
+    }
+
+    function codeTextFrom(pre) {
+      var nestedPre = pre.querySelector("pre:not(.lineno)");
+      var code = nestedPre || pre.querySelector("code") || pre;
+      return code.innerText.trim();
+    }
+
+    function setCopyState(button, ok) {
+      button.innerHTML = ok ? "<i class="fa-solid fa-clipboard-check"></i>" : "<i class="fa-solid fa-triangle-exclamation"></i>";
+      button.setAttribute("aria-label", ok ? "Copied code to clipboard" : "Copy failed");
+
+      window.setTimeout(function () {
+        button.innerHTML = "<i class="fa-solid fa-clipboard"></i>";
+        button.setAttribute("aria-label", "Copy code to clipboard");
+      }, 3000);
+    }
+
+    document.addEventListener(
+      "click",
+      function (event) {
+        var button = event.target.closest && event.target.closest(".code-display-wrapper .copy");
+        if (!button) return;
+
+        var wrapper = button.closest(".code-display-wrapper");
+        var pre = wrapper && wrapper.querySelector("pre");
+        if (!pre) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        writeText(codeTextFrom(pre)).then(
+          function () {
+            setCopyState(button, true);
+          },
+          function () {
+            setCopyState(button, false);
+          }
+        );
+      },
+      true
+    );
+  })();
+</script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Wuhuang Yao </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">python配置config的若干种方法</h1> <p class="post-meta"> Created on March 16, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/python"> <i class="fa-solid fa-hashtag fa-sm"></i> python</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p>Python 项目中的配置管理，常见方式包括：<strong>模块常量、字典、数据类、环境变量、配置文件、命令行参数，以及多层配置合并</strong>。不同方法适合不同规模和部署场景。</p> <h1 id="1-使用-python-模块保存配置">1. 使用 Python 模块保存配置</h1> <p>直接创建一个 <code class="language-plaintext highlighter-rouge">config.py</code>：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config.py
 </span>
 <span class="n">OPENAI_API_KEY</span> <span class="o">=</span> <span class="sh">"</span><span class="s">sk-xxx</span><span class="sh">"</span>
 <span class="n">OPENAI_MODEL</span> <span class="o">=</span> <span class="sh">"</span><span class="s">gpt-4</span><span class="sh">"</span>
@@ -14,7 +211,7 @@
 </code></pre></div></div> <h3 id="优点">优点</h3> <ul> <li>最简单</li> <li>不需要额外解析</li> <li>支持 Python 表达式</li> <li>适合小型项目</li> </ul> <h3 id="缺点">缺点</h3> <ul> <li>API Key 等敏感信息容易被提交到 Git</li> <li>修改配置相当于修改代码</li> <li>不适合开发、测试、生产多环境部署</li> </ul> <p>适合：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>个人脚本
 课程实验
 小型原型项目
-</code></pre></div></div> <hr/> <h1 id="2-使用字典保存配置">2. 使用字典保存配置</h1> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div></div> <hr> <h1 id="2-使用字典保存配置">2. 使用字典保存配置</h1> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
     <span class="sh">"</span><span class="s">openai_api_key</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">sk-xxx</span><span class="sh">"</span><span class="p">,</span>
     <span class="sh">"</span><span class="s">openai_model</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">gpt-4</span><span class="sh">"</span><span class="p">,</span>
     <span class="sh">"</span><span class="s">api_base_url</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">https://api.openai.com</span><span class="sh">"</span><span class="p">,</span>
@@ -42,7 +239,7 @@
 </code></pre></div></div> <p>访问方式：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">CONFIG</span><span class="p">[</span><span class="sh">"</span><span class="s">openai</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">model</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">db_host</span> <span class="o">=</span> <span class="n">CONFIG</span><span class="p">[</span><span class="sh">"</span><span class="s">database</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">host</span><span class="sh">"</span><span class="p">]</span>
 </code></pre></div></div> <h3 id="优点-1">优点</h3> <ul> <li>灵活</li> <li>易于组织嵌套配置</li> <li>很容易和 JSON、YAML 等配置文件结合</li> </ul> <h3 id="缺点-1">缺点</h3> <ul> <li>没有严格的类型检查</li> <li>键名写错后不容易提前发现</li> <li>IDE 自动补全能力较弱</li> </ul> <p>例如：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONFIG</span><span class="p">[</span><span class="sh">"</span><span class="s">openai_modle</span><span class="sh">"</span><span class="p">]</span>
-</code></pre></div></div> <p>这里把 <code class="language-plaintext highlighter-rouge">model</code> 写成了 <code class="language-plaintext highlighter-rouge">modle</code>，通常只有运行时才能发现错误。</p> <hr/> <h1 id="3-使用普通类保存配置">3. 使用普通类保存配置</h1> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+</code></pre></div></div> <p>这里把 <code class="language-plaintext highlighter-rouge">model</code> 写成了 <code class="language-plaintext highlighter-rouge">modle</code>，通常只有运行时才能发现错误。</p> <hr> <h1 id="3-使用普通类保存配置">3. 使用普通类保存配置</h1> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
     <span class="n">OPENAI_API_KEY</span> <span class="o">=</span> <span class="sh">"</span><span class="s">sk-xxx</span><span class="sh">"</span>
     <span class="n">OPENAI_MODEL</span> <span class="o">=</span> <span class="sh">"</span><span class="s">gpt-4</span><span class="sh">"</span>
     <span class="n">API_BASE_URL</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://api.openai.com</span><span class="sh">"</span>
@@ -58,7 +255,7 @@
 
 <span class="n">config</span> <span class="o">=</span> <span class="nc">Config</span><span class="p">()</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">openai_model</span><span class="p">)</span>
-</code></pre></div></div> <h3 id="优点-2">优点</h3> <ul> <li>比字典结构清晰</li> <li>支持继承、方法和属性</li> <li>IDE 自动补全较好</li> </ul> <h3 id="缺点-2">缺点</h3> <ul> <li>需要手动编写初始化代码</li> <li>类型约束仍然较弱</li> <li>大量字段时比较冗长</li> </ul> <hr/> <h1 id="4-使用-dataclass-管理配置">4. 使用 <code class="language-plaintext highlighter-rouge">dataclass</code> 管理配置</h1> <p>这就是你上一段代码采用的核心方法。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</code></pre></div></div> <h3 id="优点-2">优点</h3> <ul> <li>比字典结构清晰</li> <li>支持继承、方法和属性</li> <li>IDE 自动补全较好</li> </ul> <h3 id="缺点-2">缺点</h3> <ul> <li>需要手动编写初始化代码</li> <li>类型约束仍然较弱</li> <li>大量字段时比较冗长</li> </ul> <hr> <h1 id="4-使用-dataclass-管理配置">4. 使用 <code class="language-plaintext highlighter-rouge">dataclass</code> 管理配置</h1> <p>这就是你上一段代码采用的核心方法。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="nd">@dataclass</span>
@@ -89,7 +286,7 @@ True
     <span class="n">allowed_hosts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
     <span class="n">model_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
 </code></pre></div></div> <p>不要直接写：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allowed_hosts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</code></pre></div></div> <p>因为多个实例可能共享同一个列表对象。</p> <h3 id="优点-3">优点</h3> <ul> <li>结构清晰</li> <li>支持类型标注</li> <li>IDE 自动补全较好</li> <li>自动生成 <code class="language-plaintext highlighter-rouge">__init__</code>、<code class="language-plaintext highlighter-rouge">__repr__</code> 等方法</li> <li>适合中小型项目</li> </ul> <h3 id="缺点-3">缺点</h3> <ul> <li>类型标注默认不会自动进行运行时验证</li> <li>仍然需要编写从环境变量或配置文件读取的逻辑</li> </ul> <hr/> <h1 id="5-使用环境变量">5. 使用环境变量</h1> <p>环境变量适合保存：</p> <ul> <li>API Key</li> <li>数据库密码</li> <li>服务地址</li> <li>部署环境</li> <li>Debug 开关</li> </ul> <p>例如，在 Linux 或 macOS 中设置：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">"sk-xxx"</span>
+</code></pre></div></div> <p>因为多个实例可能共享同一个列表对象。</p> <h3 id="优点-3">优点</h3> <ul> <li>结构清晰</li> <li>支持类型标注</li> <li>IDE 自动补全较好</li> <li>自动生成 <code class="language-plaintext highlighter-rouge">__init__</code>、<code class="language-plaintext highlighter-rouge">__repr__</code> 等方法</li> <li>适合中小型项目</li> </ul> <h3 id="缺点-3">缺点</h3> <ul> <li>类型标注默认不会自动进行运行时验证</li> <li>仍然需要编写从环境变量或配置文件读取的逻辑</li> </ul> <hr> <h1 id="5-使用环境变量">5. 使用环境变量</h1> <p>环境变量适合保存：</p> <ul> <li>API Key</li> <li>数据库密码</li> <li>服务地址</li> <li>部署环境</li> <li>Debug 开关</li> </ul> <p>例如，在 Linux 或 macOS 中设置：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">"sk-xxx"</span>
 <span class="nb">export </span><span class="nv">OPENAI_MODEL</span><span class="o">=</span><span class="s2">"gpt-4"</span>
 <span class="nb">export </span><span class="nv">DEBUG</span><span class="o">=</span><span class="s2">"true"</span>
 </code></pre></div></div> <p>Python 中读取：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
@@ -121,7 +318,7 @@ True
         <span class="p">)</span>
 </code></pre></div></div> <p>使用：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">.</span><span class="nf">from_env</span><span class="p">()</span>
 </code></pre></div></div> <p>这里使用 <code class="language-plaintext highlighter-rouge">@classmethod</code> 比 <code class="language-plaintext highlighter-rouge">@staticmethod</code> 更有扩展性：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nf">cls</span><span class="p">(...)</span>
-</code></pre></div></div> <p>意味着子类调用时，可以返回对应的子类实例。</p> <h3 id="优点-4">优点</h3> <ul> <li>不需要把敏感信息写入代码</li> <li>适合 Docker、服务器、CI/CD 和云部署</li> <li>开发环境与生产环境可以使用不同值</li> </ul> <h3 id="缺点-4">缺点</h3> <ul> <li>所有环境变量最初都是字符串</li> <li>布尔值、整数、列表需要手动转换</li> <li>配置较多时管理不方便</li> </ul> <hr/> <h1 id="6-使用-env-文件">6. 使用 <code class="language-plaintext highlighter-rouge">.env</code> 文件</h1> <p><code class="language-plaintext highlighter-rouge">.env</code> 文件本质上是将环境变量写到文件中。</p> <p>例如：</p> <pre><code class="language-env">OPENAI_API_KEY=sk-xxx
+</code></pre></div></div> <p>意味着子类调用时，可以返回对应的子类实例。</p> <h3 id="优点-4">优点</h3> <ul> <li>不需要把敏感信息写入代码</li> <li>适合 Docker、服务器、CI/CD 和云部署</li> <li>开发环境与生产环境可以使用不同值</li> </ul> <h3 id="缺点-4">缺点</h3> <ul> <li>所有环境变量最初都是字符串</li> <li>布尔值、整数、列表需要手动转换</li> <li>配置较多时管理不方便</li> </ul> <hr> <h1 id="6-使用-env-文件">6. 使用 <code class="language-plaintext highlighter-rouge">.env</code> 文件</h1> <p><code class="language-plaintext highlighter-rouge">.env</code> 文件本质上是将环境变量写到文件中。</p> <p>例如：</p> <pre><code class="language-env">OPENAI_API_KEY=sk-xxx
 OPENAI_MODEL=gpt-4
 API_BASE_URL=https://api.openai.com
 DEBUG=true
@@ -141,7 +338,7 @@ OPENAI_MODEL=gpt-4
 API_BASE_URL=https://api.openai.com
 DEBUG=false
 MAX_RETRIES=3
-</code></pre> <h3 id="优点-5">优点</h3> <ul> <li>本地开发方便</li> <li>敏感配置与代码分离</li> <li>可以为不同开发者配置不同的环境</li> </ul> <h3 id="缺点-5">缺点</h3> <ul> <li><code class="language-plaintext highlighter-rouge">.env</code> 文件不适合复杂嵌套配置</li> <li>需要注意不能提交真实密钥</li> <li>所有值仍然要进行类型转换</li> </ul> <hr/> <h1 id="7-使用-ini-配置文件">7. 使用 INI 配置文件</h1> <p>Python 标准库提供了 <code class="language-plaintext highlighter-rouge">configparser</code>。</p> <p><code class="language-plaintext highlighter-rouge">config.ini</code>：</p> <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[openai]</span><span class="w">
+</code></pre> <h3 id="优点-5">优点</h3> <ul> <li>本地开发方便</li> <li>敏感配置与代码分离</li> <li>可以为不同开发者配置不同的环境</li> </ul> <h3 id="缺点-5">缺点</h3> <ul> <li> <code class="language-plaintext highlighter-rouge">.env</code> 文件不适合复杂嵌套配置</li> <li>需要注意不能提交真实密钥</li> <li>所有值仍然要进行类型转换</li> </ul> <hr> <h1 id="7-使用-ini-配置文件">7. 使用 INI 配置文件</h1> <p>Python 标准库提供了 <code class="language-plaintext highlighter-rouge">configparser</code>。</p> <p><code class="language-plaintext highlighter-rouge">config.ini</code>：</p> <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[openai]</span><span class="w">
 </span><span class="py">api_key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">sk-xxx</span>
 <span class="py">model</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">gpt-4</span>
 <span class="py">base_url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">https://api.openai.com</span>
@@ -181,7 +378,7 @@ MAX_RETRIES=3
             <span class="sh">"</span><span class="s">max_retries</span><span class="sh">"</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="p">)</span>
-</code></pre></div></div> <h3 id="优点-6">优点</h3> <ul> <li>Python 标准库原生支持</li> <li>配置分组清晰</li> <li>支持整数、布尔值等转换</li> </ul> <h3 id="缺点-6">缺点</h3> <ul> <li>不适合复杂嵌套结构</li> <li>表达列表、对象等数据比较麻烦</li> </ul> <hr/> <h1 id="8-使用-json-配置文件">8. 使用 JSON 配置文件</h1> <p><code class="language-plaintext highlighter-rouge">config.json</code>：</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</code></pre></div></div> <h3 id="优点-6">优点</h3> <ul> <li>Python 标准库原生支持</li> <li>配置分组清晰</li> <li>支持整数、布尔值等转换</li> </ul> <h3 id="缺点-6">缺点</h3> <ul> <li>不适合复杂嵌套结构</li> <li>表达列表、对象等数据比较麻烦</li> </ul> <hr> <h1 id="8-使用-json-配置文件">8. 使用 JSON 配置文件</h1> <p><code class="language-plaintext highlighter-rouge">config.json</code>：</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"openai"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sk-xxx"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gpt-4"</span><span class="p">,</span><span class="w">
@@ -208,7 +405,7 @@ MAX_RETRIES=3
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">openai</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">model</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">debug</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">application</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">debug</span><span class="sh">"</span><span class="p">]</span>
-</code></pre></div></div> <h3 id="优点-7">优点</h3> <ul> <li>格式通用</li> <li>支持嵌套结构、列表和对象</li> <li>Python 标准库直接支持</li> </ul> <h3 id="缺点-7">缺点</h3> <ul> <li>标准 JSON 不支持注释</li> <li>不适合保存密钥</li> <li>键名没有类型检查</li> </ul> <hr/> <h1 id="9-使用-toml-配置文件">9. 使用 TOML 配置文件</h1> <p>TOML 很适合 Python 项目配置。</p> <p><code class="language-plaintext highlighter-rouge">config.toml</code>：</p> <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">openai</span><span class="k">]</span>
+</code></pre></div></div> <h3 id="优点-7">优点</h3> <ul> <li>格式通用</li> <li>支持嵌套结构、列表和对象</li> <li>Python 标准库直接支持</li> </ul> <h3 id="缺点-7">缺点</h3> <ul> <li>标准 JSON 不支持注释</li> <li>不适合保存密钥</li> <li>键名没有类型检查</li> </ul> <hr> <h1 id="9-使用-toml-配置文件">9. 使用 TOML 配置文件</h1> <p>TOML 很适合 Python 项目配置。</p> <p><code class="language-plaintext highlighter-rouge">config.toml</code>：</p> <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">openai</span><span class="k">]</span>
 <span class="n">api_key</span> <span class="o">=</span><span class="w"> </span><span class="s">"sk-xxx"</span>
 <span class="n">model</span> <span class="o">=</span><span class="w"> </span><span class="s">"gpt-4"</span>
 <span class="n">base_url</span> <span class="o">=</span><span class="w"> </span><span class="s">"https://api.openai.com"</span>
@@ -233,7 +430,7 @@ MAX_RETRIES=3
 
 <span class="nf">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">openai</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">model</span><span class="sh">"</span><span class="p">])</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">database</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">port</span><span class="sh">"</span><span class="p">])</span>
-</code></pre></div></div> <h3 id="优点-8">优点</h3> <ul> <li>格式清晰</li> <li>支持嵌套、列表、整数和布尔值</li> <li>比 JSON 更适合人工编辑</li> <li>Python 项目中使用广泛</li> </ul> <h3 id="缺点-8">缺点</h3> <ul> <li>密钥仍然不应直接放入版本控制</li> <li>读取后通常仍然是字典</li> </ul> <hr/> <h1 id="10-使用-yaml-配置文件">10. 使用 YAML 配置文件</h1> <p><code class="language-plaintext highlighter-rouge">config.yaml</code>：</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">openai</span><span class="pi">:</span>
+</code></pre></div></div> <h3 id="优点-8">优点</h3> <ul> <li>格式清晰</li> <li>支持嵌套、列表、整数和布尔值</li> <li>比 JSON 更适合人工编辑</li> <li>Python 项目中使用广泛</li> </ul> <h3 id="缺点-8">缺点</h3> <ul> <li>密钥仍然不应直接放入版本控制</li> <li>读取后通常仍然是字典</li> </ul> <hr> <h1 id="10-使用-yaml-配置文件">10. 使用 YAML 配置文件</h1> <p><code class="language-plaintext highlighter-rouge">config.yaml</code>：</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">openai</span><span class="pi">:</span>
   <span class="na">api_key</span><span class="pi">:</span> <span class="s">sk-xxx</span>
   <span class="na">model</span><span class="pi">:</span> <span class="s">gpt-4</span>
   <span class="na">base_url</span><span class="pi">:</span> <span class="s">https://api.openai.com</span>
@@ -272,7 +469,7 @@ MAX_RETRIES=3
   <span class="na">num_buckets</span><span class="pi">:</span> <span class="m">6</span>
   <span class="na">window_size</span><span class="pi">:</span> <span class="m">3</span>
   <span class="na">privacy_level</span><span class="pi">:</span> <span class="m">0.5</span>
-</code></pre></div></div> <hr/> <h1 id="11-使用命令行参数">11. 使用命令行参数</h1> <p>通过 <code class="language-plaintext highlighter-rouge">argparse</code> 接收运行时配置。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">argparse</span>
+</code></pre></div></div> <hr> <h1 id="11-使用命令行参数">11. 使用命令行参数</h1> <p>通过 <code class="language-plaintext highlighter-rouge">argparse</code> 接收运行时配置。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">argparse</span>
 
 
 <span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
@@ -304,7 +501,7 @@ MAX_RETRIES=3
   <span class="nt">--num-clients</span> 20 <span class="se">\</span>
   <span class="nt">--local-epochs</span> 8 <span class="se">\</span>
   <span class="nt">--seed</span> 42
-</code></pre></div></div> <hr/> <h1 id="12-使用不同环境的配置类">12. 使用不同环境的配置类</h1> <p>可以为开发、测试、生产环境分别定义配置。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</code></pre></div></div> <hr> <h1 id="12-使用不同环境的配置类">12. 使用不同环境的配置类</h1> <p>可以为开发、测试、生产环境分别定义配置。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -358,7 +555,7 @@ MAX_RETRIES=3
     <span class="k">return</span> <span class="nf">config_class</span><span class="p">()</span>
 </code></pre></div></div> <p>运行时设置：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">APP_ENV</span><span class="o">=</span>production
 python main.py
-</code></pre></div></div> <h3 id="优点-11">优点</h3> <ul> <li>不同环境边界清晰</li> <li>适合 Web 服务和正式部署</li> </ul> <h3 id="缺点-11">缺点</h3> <ul> <li>配置较多时类的数量会增加</li> <li>继承层级复杂后不容易维护</li> </ul> <hr/> <h1 id="13-多层配置覆盖">13. 多层配置覆盖</h1> <p>实际项目中，通常不会只使用一种配置方式，而是按照优先级合并。</p> <p>常见优先级：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>默认配置
+</code></pre></div></div> <h3 id="优点-11">优点</h3> <ul> <li>不同环境边界清晰</li> <li>适合 Web 服务和正式部署</li> </ul> <h3 id="缺点-11">缺点</h3> <ul> <li>配置较多时类的数量会增加</li> <li>继承层级复杂后不容易维护</li> </ul> <hr> <h1 id="13-多层配置覆盖">13. 多层配置覆盖</h1> <p>实际项目中，通常不会只使用一种配置方式，而是按照优先级合并。</p> <p>常见优先级：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>默认配置
    ↓
 配置文件
    ↓
@@ -382,7 +579,7 @@ python main.py
 </code></pre></div></div> <p>命令行覆盖：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">args</span><span class="p">.</span><span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
     <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">model</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">model</span>
 </code></pre></div></div> <p>最后优先级为：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>命令行参数 &gt; 环境变量 &gt; 配置文件 &gt; 默认值
-</code></pre></div></div> <p>这种方式适合正式项目。</p> <hr/> <h1 id="14-推荐的组合方式">14. 推荐的组合方式</h1> <h2 id="小型脚本">小型脚本</h2> <p>使用 Python 模块常量：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config.py
+</code></pre></div></div> <p>这种方式适合正式项目。</p> <hr> <h1 id="14-推荐的组合方式">14. 推荐的组合方式</h1> <h2 id="小型脚本">小型脚本</h2> <p>使用 Python 模块常量：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config.py
 </span><span class="n">MODEL</span> <span class="o">=</span> <span class="sh">"</span><span class="s">gpt-4</span><span class="sh">"</span>
 <span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
 </code></pre></div></div> <h2 id="普通课程项目">普通课程项目</h2> <p>使用：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dataclass + .env
@@ -421,7 +618,7 @@ DATABASE_PASSWORD=...
 </code></pre> <p>非敏感复杂配置放 TOML 或 YAML：</p> <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">application</span><span class="k">]</span>
 <span class="n">debug</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 <span class="n">max_retries</span> <span class="o">=</span><span class="w"> </span><span class="mi">3</span>
-</code></pre></div></div> <hr/> <h1 id="15-各种方法对比">15. 各种方法对比</h1> <table> <thead> <tr> <th>方法</th> <th style="text-align: right">类型支持</th> <th style="text-align: right">敏感信息</th> <th style="text-align: right">复杂配置</th> <th>适用场景</th> </tr> </thead> <tbody> <tr> <td>Python 常量</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>小型脚本</td> </tr> <tr> <td>字典</td> <td style="text-align: right">较弱</td> <td style="text-align: right">不适合</td> <td style="text-align: right">较好</td> <td>简单项目</td> </tr> <tr> <td>普通类</td> <td style="text-align: right">一般</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>中小项目</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">dataclass</code></td> <td style="text-align: right">较好</td> <td style="text-align: right">需结合环境变量</td> <td style="text-align: right">较好</td> <td>中小型项目</td> </tr> <tr> <td>环境变量</td> <td style="text-align: right">全部为字符串</td> <td style="text-align: right">适合</td> <td style="text-align: right">较弱</td> <td>部署和密钥</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">.env</code></td> <td style="text-align: right">全部为字符串</td> <td style="text-align: right">适合本地开发</td> <td style="text-align: right">较弱</td> <td>本地项目</td> </tr> <tr> <td>INI</td> <td style="text-align: right">一般</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>传统应用</td> </tr> <tr> <td>JSON</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">较好</td> <td>通用配置</td> </tr> <tr> <td>TOML</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">较好</td> <td>Python 项目</td> </tr> <tr> <td>YAML</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">很好</td> <td>机器学习实验</td> </tr> <tr> <td>命令行参数</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>实验和脚本</td> </tr> </tbody> </table> <p>比较合理的方案是：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.env
+</code></pre></div></div> <hr> <h1 id="15-各种方法对比">15. 各种方法对比</h1> <table> <thead> <tr> <th>方法</th> <th style="text-align: right">类型支持</th> <th style="text-align: right">敏感信息</th> <th style="text-align: right">复杂配置</th> <th>适用场景</th> </tr> </thead> <tbody> <tr> <td>Python 常量</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>小型脚本</td> </tr> <tr> <td>字典</td> <td style="text-align: right">较弱</td> <td style="text-align: right">不适合</td> <td style="text-align: right">较好</td> <td>简单项目</td> </tr> <tr> <td>普通类</td> <td style="text-align: right">一般</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>中小项目</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">dataclass</code></td> <td style="text-align: right">较好</td> <td style="text-align: right">需结合环境变量</td> <td style="text-align: right">较好</td> <td>中小型项目</td> </tr> <tr> <td>环境变量</td> <td style="text-align: right">全部为字符串</td> <td style="text-align: right">适合</td> <td style="text-align: right">较弱</td> <td>部署和密钥</td> </tr> <tr> <td><code class="language-plaintext highlighter-rouge">.env</code></td> <td style="text-align: right">全部为字符串</td> <td style="text-align: right">适合本地开发</td> <td style="text-align: right">较弱</td> <td>本地项目</td> </tr> <tr> <td>INI</td> <td style="text-align: right">一般</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>传统应用</td> </tr> <tr> <td>JSON</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">较好</td> <td>通用配置</td> </tr> <tr> <td>TOML</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">较好</td> <td>Python 项目</td> </tr> <tr> <td>YAML</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">很好</td> <td>机器学习实验</td> </tr> <tr> <td>命令行参数</td> <td style="text-align: right">较好</td> <td style="text-align: right">不适合</td> <td style="text-align: right">一般</td> <td>实验和脚本</td> </tr> </tbody> </table> <p>比较合理的方案是：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.env
   负责 API Key、API 地址等部署配置
 
 Config dataclass
@@ -433,108 +630,184 @@ YAML 或 TOML
 argparse
   负责临时覆盖实验参数
 </code></pre></div></div> <p>即：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>默认值 &lt; YAML/TOML &lt; .env 环境变量 &lt; 命令行参数
-</code></pre></div></div> <p>这也是科研代码和工程项目中较常见、可维护性较好的配置结构。</p>]]></content><author><name></name></author><category term="python"/><summary type="html"><![CDATA[科学管理项目，助力高效科研]]></summary></entry><entry><title type="html">Ubuntu安装ida（使用conda环境）</title><link href="https://captainrhett.github.io/blog/2025/ubuntu-ida/" rel="alternate" type="text/html" title="Ubuntu安装ida（使用conda环境）"/><published>2025-05-15T15:21:54+00:00</published><updated>2025-05-15T15:21:54+00:00</updated><id>https://captainrhett.github.io/blog/2025/ubuntu-ida</id><content type="html" xml:base="https://captainrhett.github.io/blog/2025/ubuntu-ida/"><![CDATA[<h1 id="ubuntu安装ida使用conda环境">Ubuntu安装ida（使用conda环境）</h1> <h2 id="创建conda环境">创建conda环境</h2> <p>建议给 IDA 单独建一个环境，不要直接用 <code class="language-plaintext highlighter-rouge">base</code>。</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create <span class="nt">-n</span> ida92 <span class="nv">python</span><span class="o">=</span>3.13 <span class="nt">-y</span>
-conda activate ida92
-</code></pre></div></div> <p>查看 Conda 环境路径：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$CONDA_PREFIX</span>
-</code></pre></div></div> <p>一般会类似：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/username/miniconda3/envs/ida92
-</code></pre></div></div> <h2 id="2-找到conda环境里的libpython">2. 找到conda环境里的libpython</h2> <p>执行：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="s2">"</span><span class="nv">$CONDA_PREFIX</span><span class="s2">"</span> <span class="nt">-name</span> <span class="s2">"libpython3*.so*"</span>
-</code></pre></div></div> <p>你大概率会看到类似：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/username/miniconda3/envs/ida92/lib/libpython3.13.so
-/home/username/miniconda3/envs/ida92/lib/libpython3.13.so.1.0
-</code></pre></div></div> <p>IDA 要绑定的是这个动态库，一般用：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/username/miniconda3/envs/ida92/lib/libpython3.13.so.1.0
-</code></pre></div></div> <h2 id="3-用-idapyswitch-切换到-conda-python">3. 用 idapyswitch 切换到 Conda Python</h2> <p>假设你的 IDA 安装目录是：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/username/ida-pro-9.2
-</code></pre></div></div> <p>那么执行：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/username/ida-pro-9.2/idapyswitch --force-path "$CONDA_PREFIX/lib/libpython3.13.so.1.0"
-</code></pre></div></div> <p>如果你的 IDA 安装目录是：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/tmp/ida-pro-9.2
-</code></pre></div></div> <p>则执行：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/tmp/ida-pro-9.2/idapyswitch --force-path "$CONDA_PREFIX/lib/libpython3.13.so.1.0"
-</code></pre></div></div> <p>也可以写成绝对路径：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/tmp/ida-pro-9.2/idapyswitch --force-path /home/username/miniconda3/envs/ida92/lib/libpython3.13.so.1.0
-</code></pre></div></div> <hr/> <h2 id="4-从-conda-环境启动-ida">4. 从 Conda 环境启动 IDA</h2> <p>不要直接双击 IDA，先在终端激活 Conda 环境后启动：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda activate ida92
-/var/tmp/ida-pro-9.2/ida
-</code></pre></div></div> <p>进入 IDA 后，在 Python Console 里执行：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import sys
-print(sys.version)
-print(sys.prefix)
-</code></pre></div></div> <p>如果输出里能看到：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/username/miniconda3/envs/ida92
-</code></pre></div></div> <p>说明 IDAPython 已经在使用你的 Conda 环境。</p>]]></content><author><name></name></author><category term="binary"/><summary type="html"><![CDATA[ubuntu安装ida]]></summary></entry><entry><title type="html">LSB 图像隐写程序设计</title><link href="https://captainrhett.github.io/blog/2022/lsb-steganography/" rel="alternate" type="text/html" title="LSB 图像隐写程序设计"/><published>2022-09-09T09:13:23+00:00</published><updated>2022-09-09T09:13:23+00:00</updated><id>https://captainrhett.github.io/blog/2022/lsb-steganography</id><content type="html" xml:base="https://captainrhett.github.io/blog/2022/lsb-steganography/"><![CDATA[<p>此为北京理工大学网安专业某学期的某次作业。</p> <h1 id="一项目背景">一、项目背景</h1> <h2 id="1-隐写术">1. 隐写术</h2> <p>隐写术是一门关于信息隐藏的技巧与科学。所谓信息隐藏，指的是不让除预期接收者之外的任何人知晓信息的传递事件或者信息的内容。</p> <h2 id="2-lsb-隐写术">2. LSB 隐写术</h2> <p>LSB 隐写术是一种图像隐写术技术，其中通过将每个像素的<strong>最低有效位</strong>替换为要隐藏的消息位来将消息隐藏在图像中。</p> <h2 id="3-实现原理">3. 实现原理</h2> <p>为了更好地理解，让我们将数字图像视为像素的二维阵列。每个像素包含取决于其类型和深度的值。使用最广泛的颜色模式 RGB 时，这些值的范围为 0-255。</p> <p><img src="https://img2022.cnblogs.com/blog/2966064/202209/2966064-20220909082237848-432441629.png" alt="RGB 像素示意图"/></p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/lsb-480.webp 480w,/assets/img/lsb-800.webp 800w,/assets/img/lsb-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/lsb.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> </div> <p>可以使用 ASCII Table 将消息转换为十进制值，然后再转换为二进制。随后逐个迭代像素值，将它们转换为二进制，并将每个最低有效位替换为消息序列中的对应位。</p> <p>要解码编码图像，只需反转该过程：收集并存储每个像素的最后一位，然后将它们分成 8 位一组，并转换回 ASCII 字符，从而获取隐藏消息。</p> <h1 id="二项目目标">二、项目目标</h1> <h2 id="1-主要目标">1. 主要目标</h2> <p>编写 <strong>LSB 图像隐写程序</strong>，包括：<strong>加密程序</strong>和<strong>解密程序</strong>。</p> <h2 id="2-目标分解">2. 目标分解</h2> <ul> <li>实现文本信息加密到图像</li> <li>实现图像文件解密到文本</li> </ul> <h1 id="三技术选型">三、技术选型</h1> <h2 id="1-如何以二进制方式读写图像文件">1. 如何以二进制方式读写图像文件？</h2> <p>首先安装 Pillow 库。打开控制台后输入以下命令即可自动安装：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="n">pillow</span>
-</code></pre></div></div> <p>然后读取图片：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># 从 pillow 库（即 PIL）中导入 Image 类
-</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">../xx.jpg</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># 读取图片存入变量 img 中
-</span><span class="nf">print</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span>  <span class="c1"># 输出图片格式 str
-</span><span class="nf">print</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># 输出图片大小信息 tuple = (int, int)
-</span></code></pre></div></div> <p>获取像素信息：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 像素载入
-</span><span class="n">pix</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
-<span class="n">width</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># .size 方法返回的是一个元组 tuple = (int, int)
-</span><span class="n">height</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div> <p>这也是科研代码和工程项目中较常见、可维护性较好的配置结构。</p> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/%E5%AD%97%E8%8A%82%E5%AE%89%E5%85%A8%E5%AE%9E%E4%B9%A0%E7%94%9F-%E6%8A%96%E9%9F%B3%E7%A0%94%E5%8F%91/">安全实习生-抖音研发 一面凉经</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/ubuntu-ida/">Ubuntu安装ida（使用conda环境）</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/lsb-steganography/">LSB 图像隐写程序设计</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Wuhuang Yao. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
 
-<span class="c1"># 获取像素点的 RGB 值
-</span><span class="n">rgb_list</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 创建一个数组存储 RGB 值
-</span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>  <span class="c1"># 遍历每一个像素点，将图像看作二维数组
-</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>  <span class="c1"># 如果 x 循环在外层，输出的图像会发生九十度翻转
-</span>        <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">pix</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
-        <span class="n">rgb_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-        <span class="n">rgb_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-        <span class="n">rgb_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</code></pre></div></div> <p>输出图像：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 输出图像
-</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">pixels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 以 [(r1, g1, b1), (r2, g2, b2)] 形式存放每个像素点的 RGB 值，用于绘制图像
-</span><span class="n">img_out</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># 生成新图像，以原图的格式和大小
-</span>
-<span class="c1"># img_out 此时还是一张白纸，下面的代码用于更新 img_out 的像素信息
-</span><span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">rgb_list</span><span class="p">):</span>
-    <span class="n">pixels</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="n">rgb_list</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">rgb_list</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">rgb_list</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]))</span>
-    <span class="n">j</span> <span class="o">+=</span> <span class="mi">3</span>
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "posts and updates in reversed chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "publications by categories in reversed chronological order. generated by jekyll-scholar.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of your cool projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "post-安全实习生-抖音研发-一面凉经",
+        
+          title: "安全实习生-抖音研发 一面凉经",
+        
+        description: "字节",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/%E5%AD%97%E8%8A%82%E5%AE%89%E5%85%A8%E5%AE%9E%E4%B9%A0%E7%94%9F-%E6%8A%96%E9%9F%B3%E7%A0%94%E5%8F%91/";
+          
+        },
+      },{id: "post-python配置config的若干种方法",
+        
+          title: "python配置config的若干种方法",
+        
+        description: "科学管理项目，助力高效科研",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/python-config/";
+          
+        },
+      },{id: "post-ubuntu安装ida-使用conda环境",
+        
+          title: "Ubuntu安装ida（使用conda环境）",
+        
+        description: "ubuntu安装ida",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ubuntu-ida/";
+          
+        },
+      },{id: "post-lsb-图像隐写程序设计",
+        
+          title: "LSB 图像隐写程序设计",
+        
+        description: "北京理工大学课程作业：使用 Python 和 Pillow 实现 LSB 图像隐写的加密与解密。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/lsb-steganography/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "projects-project-1",
+          title: 'project 1',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-project-2",
+          title: 'project 2',
+          description: "a project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "projects-project-3-with-very-long-name",
+          title: 'project 3 with very long name',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%63%61%70%74%61%69%6E%72%68%65%74%74%79%61%6F@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/CaptainRhett", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=jUbr6ggAAAAJ", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
 
-<span class="n">img_out</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>  <span class="c1"># 放置像素信息
-</span><span class="n">img_out</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">"</span><span class="s">img_out2.png</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># 将图像保存到根目录
-</span></code></pre></div></div> <h2 id="2-信息如何转换">2. 信息如何转换？</h2> <p>二进制转文本（解密）：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bina_to_txt</span><span class="p">(</span><span class="n">bina</span><span class="p">):</span>
-    <span class="c1"># 只要传入一个由二进制数组成的序列即可翻译成文本
-</span>    <span class="n">tex</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bina</span><span class="p">:</span>
-        <span class="n">tex</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">chr</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-    <span class="k">return</span> <span class="n">tex</span>  <span class="c1"># 返回一个单字符序列
-</span>
-
-<span class="c1"># 要求 bina 的格式为 ["01010101", "11111111"]
-</span></code></pre></div></div> <p>文本转二进制（加密）：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">txt_to_bina</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">txt</span><span class="p">:</span>
-        <span class="n">c</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">"</span><span class="s">{:0&gt;8}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nf">bin</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)).</span><span class="nf">lstrip</span><span class="p">(</span><span class="sh">"</span><span class="s">0b</span><span class="sh">"</span><span class="p">)))</span>
-        <span class="c1"># 格式化并将二进制码保存起来
-</span>        <span class="c1"># 注意要在左侧补齐八位，否则信息会错位
-</span>
-    <span class="n">resultlist</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
-            <span class="n">resultlist</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">resultlist</span>
-
-
-<span class="c1"># txt 为字符串类型，如 "hello world!"
-# print(txt_to_bina("h")) 输出测试
-# test_output: ["0", "1", "1", "0", "1", "0", "0", "0"]
-</span></code></pre></div></div> <p>替换信息位（加密）：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 替换信息位
-</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="nf">txt_to_bina</span><span class="p">(</span><span class="n">txt</span><span class="p">)):</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">bin</span><span class="p">(</span><span class="n">rgb_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>  <span class="c1"># 用 bin() 强制转换，bin() 返回字符串类型
-</span>    <span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">txt_to_bina</span><span class="p">(</span><span class="n">txt</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># 将 RGB 信息二进制码的最后一位替换成文本二进制码
-</span>    <span class="n">rgb_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">temp</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="c1"># txt_to_bina() 是自定义函数，旨在将文本转化成二进制码，返回一个单字符序列
-# 这里直接用第一个像素的 RGB 值作为隐写的开头，所以 rgb_list 和 txt_to_bina() 的 index 是一样的
-# 此处可以继续做加密处理
-</span>
-<span class="c1"># 特别注意：在 Python 中字符串不能直接修改，replace 方法不会改变原来的 string
-# 修改字符串要将字符串转换成序列，修改序列后再将序列转成字符串，实现代码如下：
-</span><span class="n">s</span> <span class="o">=</span> <span class="sh">"</span><span class="s">abcde</span><span class="sh">"</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">f</span><span class="sh">"</span>  <span class="c1"># 假设要将 s 的最后一位 "e" 修改为 "f"
-</span><span class="n">s</span> <span class="o">=</span> <span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
-</code></pre></div></div> <p>提取信息位信息：</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 这里直接用的是 "hello world!" 的长度，后期优化可以加个旗帜识别
-</span><span class="n">c</span> <span class="o">=</span> <span class="sh">""</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">96</span><span class="p">):</span>
-    <span class="n">c</span> <span class="o">+=</span> <span class="nf">bin</span><span class="p">(</span><span class="n">rgb_list</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 图像处理后得到 rgb_list，取二进制码的最后一位
-</span>
-<span class="n">out_list_bin</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
-    <span class="n">out_list_bin</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">8</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">])</span>  <span class="c1"># 每八位为一组转换出文本
-</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nf">bina_to_txt</span><span class="p">(</span><span class="n">out_list_bin</span><span class="p">)))</span>
-</code></pre></div></div>]]></content><author><name></name></author><category term="assignments"/><category term="python"/><summary type="html"><![CDATA[北京理工大学课程作业：使用 Python 和 Pillow 实现 LSB 图像隐写的加密与解密。]]></summary></entry></feed>
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
