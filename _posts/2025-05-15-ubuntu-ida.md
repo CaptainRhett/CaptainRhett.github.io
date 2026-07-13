@@ -3,7 +3,7 @@ layout: post
 title: Ubuntu安装ida（使用conda环境）
 date: 2025-05-15 15:21:54 
 description: ubuntu安装ida
-tags: ida
+tags: binary
 ---
 # Ubuntu安装ida（使用conda环境）
 

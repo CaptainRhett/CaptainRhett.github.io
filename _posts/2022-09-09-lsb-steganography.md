@@ -3,7 +3,7 @@ layout: post
 title: LSB 图像隐写程序设计
 date: 2022-09-09 09:13:23 
 description: 北京理工大学课程作业：使用 Python 和 Pillow 实现 LSB 图像隐写的加密与解密。
-tags: python image-processing steganography
+tags: python 
 categories: assignments
 ---
 
