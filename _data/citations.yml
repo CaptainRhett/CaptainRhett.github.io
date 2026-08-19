@@ -1,7 +1,7 @@
 metadata:
-  last_updated: '2026-07-06'
+  last_updated: '2026-08-19'
 papers:
   jUbr6ggAAAAJ:2osOgNQ5qMEC:
-    citations: 5
+    citations: 6
     title: 'Jleaks: A featured resource leak repository collected from hundreds of open-source java projects'
     year: '2024'
